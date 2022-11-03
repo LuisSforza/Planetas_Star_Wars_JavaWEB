@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap'); /*Imporrto una fuente de google fonts*/
+
+
+body{
+    background-image: linear-gradient(to top, #556567,#394A59);
+    min-height: 100vh;
+    background-attachment: fixed;                       /*Se establece que la imagen se mueva junto al scroll*/
+    background-size: cover;                             /*Se actualiza el tamaño de la imagen para cubrir toda la página al hacer zoom*/
+    background-repeat: no-repeat;                       /*Se evita la repetición de la imagen*/
+    background-position: center center;                 /*Se centra la imagen de fondo*/
+    color: white;
+    height: 100vh;
+    font-family: 'Maven Pro', sans-serif;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.catalogo-container{
+    color: #000;
+    text-align: center;
+    line-height: 10px;
+    margin: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    transition: all 400ms ease;
+    box-shadow: 5px 15px 5px rgba(0,0,0,0.5);
+}
+
+.catalogo-container:hover{
+    transform: translateY(-2%);
+}
+
+.verPlaneta{
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 1.20rem;
+    background-color: #394A59;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 400ms ease;
+
+}
+.verPlaneta:hover{
+    background-color: #BC1E22;
+    transform: translateY(-10%);
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}

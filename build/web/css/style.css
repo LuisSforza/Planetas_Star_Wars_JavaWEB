@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap'); /*Imporrto una fuente de google fonts*/
+
+
+body{
+    background-image: linear-gradient(to top, #ffff,#000);
+    min-height: 100vh;
+    background-attachment: fixed;                       /*Se establece que la imagen se mueva junto al scroll*/
+    background-size: cover;                             /*Se actualiza el tamaño de la imagen para cubrir toda la página al hacer zoom*/
+    background-repeat: no-repeat;                       /*Se evita la repetición de la imagen*/
+    background-position: center center;                 /*Se centra la imagen de fondo*/
+    color: white;
+    height: 100vh;
+    font-family: 'Maven Pro', sans-serif;
+}
+.img-log{
+    width: 80%;
+}
+
+.login-container{
+    height: 25em;
+    width: 40em;
+    margin: 6em auto;
+    display: flex; /*Se pone la imagen a lado del formulario*/
+    justify-content: space-between; /*Los alineo a las orillas*/
+    overflow: hidden;
+    box-shadow: 25px 50px 25px rgba(0,0,0,0.5);
+    
+}
+
+.login-img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 50%;
+}
+
+.login-info-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #000;
+}
+
+.title{
+    text-transform: capitalize;
+    font-size: 1.80rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.inputs-container{
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.input{
+    width: 90%;
+    height: 2.125rem;
+    font-size: 1em;
+    padding-left: 20px;
+    border-radius: 3px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    background-color: #000;
+    color: red;
+    border-color: #fff;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    font: inherit;
+    transition: all 400ms ease;
+    
+
+}
+input[type="text"]:focus{
+    outline: none;
+} 
+input[type="text"]:hover{
+    color: #BC1E22;
+    border-color: #BC1E22;
+}
+input[type="password"]:focus{
+    outline: none;
+} 
+input[type="password"]:hover{
+    color: #BC1E22;
+    border-color: #BC1E22;
+}
+
+.input-btn{
+    width: 80%;
+    height: 2.125rem;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 6px;
+    transition: all 400ms ease;
+
+}
+
+.input-btn:hover{
+    background-color: #BC1E22;
+    transform: translateY(-10%);
+}
+
+@media screen and (max-width:1000px){
+    .img-log{
+        display: none;
+    }
+
+    .login-container{
+        width: 70%;
+        margin-top: 3rem;
+    }
+    .login-img-container{
+        background-color: transparent;
+        width: 0;
+    }
+    .login-info-container{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width:1000px){
+    
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-container{
+        width: 90%;
+        margin-top: 3rem;
+    }
+    
+}
