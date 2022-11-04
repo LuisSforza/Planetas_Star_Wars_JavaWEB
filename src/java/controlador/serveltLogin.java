@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -73,7 +74,9 @@ public class serveltLogin extends HttpServlet {
         String pass = request.getParameter("password");
         
         if ("EGJM".equals(user) && "1234".equals(pass)){
-            response.sendRedirect("planetas.html");
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("user", user);
+            response.sendRedirect("planetas.jsp");
         }else{
             String mensaje = "Usuario o contraseña son incorrectas";
             request.setAttribute("mensajeInfo", mensaje); //Le indico que guardo la variable mensaje en la variable que se presentara en la variable index.jsp

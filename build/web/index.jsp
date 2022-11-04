@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,6 +29,11 @@
         <div class="login-img-container">
             <img class="img-log" src="img/Logo-imperio-galáctico.png" alt="Imperio galáctico">
         </div>
+        <%
+            if(request.getParameter("cerrar")!=null){
+                session.invalidate();
+            }
+        %>
     </div>
 
 </body>
