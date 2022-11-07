@@ -16,5 +16,6 @@ public interface CRUD {
     public List listar();
     public Usuario list(String user);
     public boolean add(Usuario user);
+    public boolean validacionUser(String user, String pass);
     
 }

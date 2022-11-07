@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import ModeloDAO.UsuarioDAO;
 
 /**
  *
  * @author Luis CR
  */
 public class serveltLogin extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -72,8 +72,9 @@ public class serveltLogin extends HttpServlet {
             throws ServletException, IOException {
         String user = request.getParameter("user");
         String pass = request.getParameter("password");
+        UsuarioDAO userDao = new UsuarioDAO();
         
-        if ("EGJM".equals(user) && "1234".equals(pass)){
+        if (userDao.validacionUser(user, pass)){
             HttpSession sesion = request.getSession();
             sesion.setAttribute("user", user);
             response.sendRedirect("planetas.jsp");
