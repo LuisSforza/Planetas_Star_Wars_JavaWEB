@@ -6,10 +6,12 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="modelo.Usuario"%>
+<%@page import="modelo.Planeta"%>
 <%@page import="java.sql.SQLException"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
 <%@page import="ModeloDAO.UsuarioDAO"%>
+<%@page import="ModeloDAO.PlanetaDAO"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,44 +30,33 @@
         
         if(sesion.getAttribute("user")!=null){
             user = sesion.getAttribute("user").toString();
-            out.print("<a href='index.jsp?cerrar=true'><h5>Cerrar Session "+ user +"</h5></a>");
+            out.print("<center><a href='index.jsp?cerrar=true'><h2>Salir</h2></a></center>");
         }else{
             response.sendRedirect("index.jsp");
         }
     %>
     <div class="container">
-        <% for(int i = 0; i<10; i++){%>
+        <% 
+            PlanetaDAO planetaDao = new PlanetaDAO();
+            List<Planeta>list = planetaDao.listar();
+            
+            Iterator<Planeta>iter = list.iterator();
+            
+            Planeta planeta = null;
+            
+            while(iter.hasNext()){
+                planeta = iter.next();
+        
+        %>
             <div class="catalogo-container">
-                <img src="img/Alderaan.jpg">
+                <% out.print("<img src="+ planeta.getPath() + ">");%>
                 <div class="catalogo-info-container">
                     <form method="GET" action="verPlaneta">
-                        <h3>Planeta Alderaan</h3>
-                        <input class="verPlaneta" type="sumit" value="Ver planeta">
+                        <h3><%= planeta.getName()%></h3>
+                        <!--<input class="verPlaneta" type="sumit" value="Ver planeta">-->
                     </form>
                 </div>
             </div>
-        <%}%>
-    </div>
-    <div>
-        <%
-            UsuarioDAO userDao = new UsuarioDAO();
-            List<Usuario>list = userDao.listar();
-            
-            Iterator<Usuario>iter = list.iterator();
-            
-            Usuario usuario = null;
-            
-            while(iter.hasNext()){
-                usuario = iter.next();
-            
-        %>
-        <h1>
-            <%= usuario.getUser()%>
-        </h1>
-        <h1>
-            <%= usuario.getName()%>
-        </h1>
-        
         <%}%>
     </div>
 </body>

@@ -4,9 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Luis%20CR/Documents/NetBeansProjects/ServletPlanetasStarWars/src/java/configuracion/conexion.java</file>
-            <file>file:/C:/Users/Luis%20CR/Documents/NetBeansProjects/ServletPlanetasStarWars/web/index.jsp</file>
             <file>file:/C:/Users/Luis%20CR/Documents/NetBeansProjects/ServletPlanetasStarWars/web/planetas.jsp</file>
-            <file>file:/C:/Users/Luis%20CR/Documents/NetBeansProjects/ServletPlanetasStarWars/src/java/controlador/serveltLogin.java</file>
+            <file>file:/C:/Users/Luis%20CR/Documents/NetBeansProjects/ServletPlanetasStarWars/src/java/ModeloDAO/UsuarioDAO.java</file>
         </group>
     </open-files>
 </project-private>
